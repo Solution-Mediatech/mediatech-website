@@ -13,6 +13,15 @@ body {
   color: #444444;
 }
 
+.smLogo {
+  width: 30%;
+}
+
+.nav-menu{
+  position: absolute;
+  right: 1%;
+}
+
 a {
   color: #5846f9;
 }
@@ -500,6 +509,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   #hero .hero-img img {
     width: 60%;
+  }
+
+  .smLogo {
+    width: 50%;
   }
 }
 
