@@ -94,8 +94,8 @@ jQuery(document).ready(function($) {
 
     var this_form = $(this);
     var action = $(this).attr('action');
-
-    if( false ) {
+    console.log(action, "nitin")
+    if( ! action ) {
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html('The form action property is not set!');
       return false;
@@ -105,26 +105,18 @@ jQuery(document).ready(function($) {
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
     
-    // nitin code
-    this_form.find('.loading').slideUp();
-    this_form.find('.sent-message').slideDown();
-    this_form.find("input:not(input[type=submit]), textarea").val('');
+    var formDom = $(this);
+    $.post(formDom.attr("action"), formDom.serialize())
+      .then(function() {
+        this_form.find('.loading').slideUp();
+        this_form.find('.sent-message').slideDown();
+        this_form.find("input:not(input[type=submit]), textarea").val('');
+      })
+      .catch(function() {
+        this_form.find('.loading').slideUp();
+        this_form.find('.error-message').slideDown().html('Sorry we could not submit your form please mail us.');
+      });
 
-    // $.ajax({
-    //   type: "POST",
-    //   url: action,
-    //   data: str,
-    //   success: function(msg) {
-    //     if (msg == 'OK') {
-    //       this_form.find('.loading').slideUp();
-    //       this_form.find('.sent-message').slideDown();
-    //       this_form.find("input:not(input[type=submit]), textarea").val('');
-    //     } else {
-    //       this_form.find('.loading').slideUp();
-    //       this_form.find('.error-message').slideDown().html(msg);
-    //     }
-    //   }
-    // });
     return false;
   });
 
