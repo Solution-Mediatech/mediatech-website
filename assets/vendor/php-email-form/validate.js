@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
     var this_form = $(this);
     var action = $(this).attr('action');
 
-    if( ! action ) {
+    if( false ) {
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html('The form action property is not set!');
       return false;
@@ -105,21 +105,26 @@ jQuery(document).ready(function($) {
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
     
-    $.ajax({
-      type: "POST",
-      url: action,
-      data: str,
-      success: function(msg) {
-        if (msg == 'OK') {
-          this_form.find('.loading').slideUp();
-          this_form.find('.sent-message').slideDown();
-          this_form.find("input:not(input[type=submit]), textarea").val('');
-        } else {
-          this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
-        }
-      }
-    });
+    // nitin code
+    this_form.find('.loading').slideUp();
+    this_form.find('.sent-message').slideDown();
+    this_form.find("input:not(input[type=submit]), textarea").val('');
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: action,
+    //   data: str,
+    //   success: function(msg) {
+    //     if (msg == 'OK') {
+    //       this_form.find('.loading').slideUp();
+    //       this_form.find('.sent-message').slideDown();
+    //       this_form.find("input:not(input[type=submit]), textarea").val('');
+    //     } else {
+    //       this_form.find('.loading').slideUp();
+    //       this_form.find('.error-message').slideDown().html(msg);
+    //     }
+    //   }
+    // });
     return false;
   });
 
