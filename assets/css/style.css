@@ -514,6 +514,10 @@ h1, h2, h3, h4, h5, h6 {
   .smLogo {
     width: 50%;
   }
+
+  .icon img{
+    width: 50%;
+  }
 }
 
 @media (max-width: 575px) {
