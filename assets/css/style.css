@@ -474,7 +474,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 1200px) {
-  #hero {
+  #hero { 
     background-attachment: fixed;
   }
 }
@@ -496,6 +496,10 @@ h1, h2, h3, h4, h5, h6 {
   #hero .hero-img img {
     width: 50%;
   }
+}
+
+.icon img {
+  max-width: 10vw !important;
 }
 
 @media (max-width: 768px) {
