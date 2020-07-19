@@ -1,6 +1,1 @@
-Thanks for downloading this template!
-
-Template Name: Techie
-Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/085e5bd8-bd25-40da-bf58-29ee34af3ff4/deploy-status)](https://app.netlify.com/sites/solution-mediatech/deploys)
